@@ -13,6 +13,7 @@ namespace Blazorcrud.Server.Models
         public DbSet<Person> People => Set<Person>();
         public DbSet<Address> Addresses => Set<Address>();
         public DbSet<Upload> Uploads => Set<Upload>();
+        public DbSet<CISSTask> CISSTasks => Set<CISSTask>();
         public DbSet<User> Users => Set<User>();
     }
 }

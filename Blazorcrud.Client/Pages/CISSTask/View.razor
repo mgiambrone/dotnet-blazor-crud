@@ -1,0 +1,60 @@
+@page "/CISSTask/viewtask/{id}"
+@inject ICISSTaskService CISSTaskService
+@inject NavigationManager navManager
+@inject IJSRuntime JSRuntime
+@inject Blazorcrud.Client.Shared.PageHistoryState PageHistoryState
+
+<h1>View CISSTask</h1>
+<br/>
+
+<table class="table col-md-6">
+    <tbody>
+        <tr>
+            <th scope="row">Id</th>
+            <td>@task.Id</td>
+        </tr>
+        <tr>
+            <th scope="row">Start Time At</th>
+            <td>@task.StartTimestamp</td>
+        </tr>
+        <tr>
+            <th scope="row">End Time At</th>
+            <td>@task.EndTimestamp</td>
+        </tr>
+        <tr>
+            <th scope="row">File</th>
+            <td>
+                <button @onclick="DownloadFile">Download</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="form-group">
+    @if (PageHistoryState.CanGoBack()){
+        <NavLink href="@PageHistoryState.GetGoBackPage()" class="btn btn-link">Back</NavLink>
+    }
+    else{
+        <NavLink href="/CISSTask/1" class="btn btn-link">Back</NavLink>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+
+    CISSTask task = new CISSTask();
+    
+    protected async override Task OnParametersSetAsync()
+    {
+       task = await CISSTaskService.GetCISSTask(int.Parse(Id));
+    }
+
+    void DownloadFile()
+    {        
+        JSRuntime.InvokeAsync<object>(
+            "saveAsFile",
+            task.EndTimestamp,
+            task.FileContent);
+    }
+}

@@ -7,20 +7,21 @@
 	<PropertyGroup>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<NoWarn>$(NoWarn);1591</NoWarn>
+		<UserSecretsId>7cdfd0f2-c0ea-42d5-9887-2e3cd120e879</UserSecretsId>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="BCrypt.Net-Next" Version="4.0.3"/>
-		<PackageReference Include="Bogus" Version="34.0.2"/>
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.6"/>
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.6"/>
-		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.6"/>
-		<PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.21.0"/>
-		<PackageReference Include="Quartz.Extensions.Hosting" Version="3.4.0"/>
-		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1"/>
-		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.21.0"/>
+		<PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+		<PackageReference Include="Bogus" Version="34.0.2" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.6" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.6" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.6" />
+		<PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.21.0" />
+		<PackageReference Include="Quartz.Extensions.Hosting" Version="3.4.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.21.0" />
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\Blazorcrud.Client\Blazorcrud.Client.csproj"/>
-		<ProjectReference Include="..\Blazorcrud.Shared\Blazorcrud.Shared.csproj"/>
+		<ProjectReference Include="..\Blazorcrud.Client\Blazorcrud.Client.csproj" />
+		<ProjectReference Include="..\Blazorcrud.Shared\Blazorcrud.Shared.csproj" />
 	</ItemGroup>
 </Project>
